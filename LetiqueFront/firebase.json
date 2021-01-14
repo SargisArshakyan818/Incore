@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "letique2021armenia",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
