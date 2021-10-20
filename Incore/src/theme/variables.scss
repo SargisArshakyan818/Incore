@@ -1,0 +1,271 @@
+/**
+* GLOBAL VARIABLES
+* According UI KIT
+*/
+
+/**
+ * TEXT COLORS
+ */
+$rhino: var(--rhino);
+$portGore: #3d426e;
+$governorBay: #4f5794;
+$richBlue: #6169aa;
+$chetwodeBlue: var(--chetwodeBlue);
+$lightSteelBlue: var(--lightSteelBlue);
+$perano: #b4bae9;
+$quartz: var(--quartz);
+$ghostWhite: #edefff;
+$white: #fff;
+
+/**
+ * BACKGROUND COLORS
+ */
+$tangaroa: #111327;
+$midnightExpressShade1: var(--midnightExpressShade1);
+$midnightExpressShade2: var(--midnightExpressShade2);
+$midnightExpressShade3: var(--midnightExpressShade3);
+$luckyPointShade1: var(--luckyPointShade1);
+$luckyPointShade2: #282b47;
+$bayOfMany: var(--bayOfMany);
+
+/**
+ * UI Colors
+ * Hue green
+ */
+$caribbeanDarkGreen: #0e5a45;
+$caribbeanGreen: #0dd39c;
+$brightTurquoise: #12eeb1;
+$aquamarineShade1: #3ffbc7;
+$aquamarineShade2: #82ffdc;
+$lightCyanShade1: #b4ffea;
+$lightCyanShade2: #d9fff4;
+
+/**
+ * UI Colors
+ * Hue blue
+ */
+$christalle: #1d255f;
+$midnightBlue: #1e2666;
+$resolutionBlue: #2c3579;
+$resolutionBlueShade1: #155173;
+$facebook: #245fdc;
+$irisBlue: #0a9fd6;
+$deepSkyBlue: #00baff;
+$dodgerBlue: #38caff;
+$mayaBlue: #66d5ff;
+$columbiaBlue: #aee9ff;
+$aliceBlue: #e8f9ff;
+
+/**
+ * UI Colors
+ * Hue yellow
+ */
+$orangeDarkShade: #67562c;
+$orange: #ffa800;
+$tangerineYellow: #ffcf00;
+$goldenYellow: #ffde00;
+$gorse: #ffe432;
+$laserLemon: #ffec6c;
+$moccasin: #fff4ab;
+$lightYellow: #fffbe3;
+
+/**
+ * UI Colors
+ * Hue violet
+ */
+$darkViolet: #9309e2;
+$electricPurple: #a914ff;
+$heliotrope: #c055ff;
+$mauveShade1: #d896ff;
+$mauveShade2: #e9c3ff;
+$magnolia: #f7eaff;
+$battle: #5f14ff;
+$violetRed: #f8457b;
+$twitch: #7c45f8;
+$youtube: #f8457b;
+
+/* Light Mode color */
+
+$brightTurquoiseLight: #118968;
+$subscribeBorderColor: #c0cadb;
+$textColor1: var(--textColor1);
+$textColor2: var(--textColor2);
+$bgColor1: var(--bgColor1);
+$bgColor2: var(--bgColor2);
+$bgColor3: var(--bgColor3);
+$textColor3: var(--textColor3);
+$bgColor4: var(--bgColor4);
+$textColor4: var(--textColor4);
+$inlineTextColor3: #343961;
+$scrollBg1: var(--scrollBg1);
+$scrollBg2: var(--scrollBg2);
+$inlineTextColor4: var(--inlineTextColor4);
+$bgColor5: var(--bgColor5);
+$borderColor1: var(--borderColor1);
+$bgColor6: var(--bgColor6);
+$borderColor2: var(--borderColor2);
+$bgColor8: var(--bgColor8);
+$inlineTextColor6: var(--inlineTextColor6);
+$bgColor9: var(--bgColor9);
+$borderColor3: var(--borderColor3);
+$inlineTextColor7: var(--inlineTextColor7);
+$inlineTextColor8: var(--inlineTextColor8);
+$bgColor11: var(--bgColor11);
+$inlineTextColor10: var(--inlineTextColor10);
+$bgColor12: var(--bgColor12);
+$borderColor4: var(--borderColor4);
+$inlineTextColor11: var(--inlineTextColor11);
+$inlineTextColor12: var(--inlineTextColor12);
+$borderColor5: var(--borderColor5);
+$borderColor6: var(--borderColor6);
+$svgColor1: var(--svgColor1);
+$borderColor7: var(--borderColor7);
+$bgColor13: var(--bgColor13);
+$borderColor8: var(--borderColor8);
+$textColor6: var(--textColor6);
+$borderColor9: var(--borderColor9);
+$bgColor14: var(--bgColor14);
+$bgColor15: var(--bgColor15);
+$bgColor16: var(--bgColor16);
+$inlineTextColor13: var(--inlineTextColor13);
+$inlineTextColor14: var(--inlineTextColor14);
+$bgColor17: var(--bgColor17);
+$bgColor18: var(--bgColor18);
+$bgColor19: var(--bgColor19);
+$inlineTextColor15: var(--inlineTextColor15);
+$inlineTextColor16: var(--inlineTextColor16);
+$borderColor10: var(--borderColor10);
+$borderColor11: var(--borderColor11);
+$bgColor20: var(--bgColor20);
+$bgColor21: var(--bgColor21);
+$bgColor22: var(--bgColor22);
+$inlineTextColor17: var(--inlineTextColor17);
+$inlineTextColor18: var(--inlineTextColor18);
+$bgColor23: var(--bgColor23);
+$inlineTextColor19: var(--inlineTextColor19);
+$bgColor24: var(--bgColor24);
+$borderColor12: var(--borderColor12);
+$hoverColor1: var(--hoverColor1);
+$hoverColor2: var(--hoverColor2);
+$bgColor25: var(--bgColor25);
+$hoverColor3: var(--hoverColor3);
+$inlineTextColor20: var(--inlineTextColor20);
+$inlineTextColor21: var(--inlineTextColor21);
+$bgColor26: var(--bgColor26);
+$bgColor27: var(--bgColor27);
+$inlineTextColor22: var(--inlineTextColor22);
+$borderColor13: var(--borderColor13);
+$bgColor28: var(--bgColor28);
+$inlineTextColor23: var(--inlineTextColor23);
+$inlineTextColor24: var(--inlineTextColor24) !important;
+$inlineTextColor25: var(--inlineTextColor25);
+$hoverColor4: var(--hoverColor4);
+$bgColor29: var(--bgColor29);
+$bgColor30: var(--bgColor30);
+$inlineTextColor26: var(--inlineTextColor26);
+$inlineTextColor27: var(--inlineTextColor27);
+$bgColor31: var(--bgColor31);
+$borderColor14: var(--borderColor14);
+$bgColor32: var(--bgColor32);
+$inlineTextColor28: var(--inlineTextColor28);
+$bgColor33: var(--bgColor33);
+$bgColor34: var(--bgColor34);
+$hoverColor5: var(--hoverColor5);
+$bgColor35: var(--bgColor35);
+$bgColor36: var(--bgColor36);
+$hoverColor6: var(--hoverColor6);
+$bgColor37: var(--bgColor37);
+$inlineTextColor29: var(--inlineTextColor29);
+$bgColor38: var(--bgColor38);
+$borderColor15: var(--borderColor15);
+$hoverColor7: var(--hoverColor7);
+$bgColor39: var(--bgColor39);
+$bgColor40: var(--bgColor40);
+$borderColor16: var(--borderColor16);
+$inlineTextColor30: var(--inlineTextColor30);
+$inlineTextColor31: var(--inlineTextColor31);
+$bgColor41: var(--bgColor41);
+$inlineTextColor32: var(--inlineTextColor32);
+$inlineTextColor33: var(--inlineTextColor33);
+$inlineTextColor34: var(--inlineTextColor34);
+$inlineTextColor35: var(--inlineTextColor35);
+$borderColor17: var(--borderColor17);
+$bgColor42: var(--bgColor42);
+$bgColor43: var(--bgColor43);
+$hoverColor8: var(--hoverColor8);
+$bgColor44: var(--bgColor44);
+$bgColor45: var(--bgColor45);
+$bgColor46: var(--bgColor46);
+$hoverColor9: var(--hoverColor9);
+$borderColor18: var(--borderColor18);
+$borderColor19: var(--borderColor19);
+$bgColor47: var(--bgColor47);
+$bgColor48: var(--bgColor48);
+$borderColor20: var(--borderColor20);
+
+/**
+ * THEME MAIN PALETTE
+ *
+
+ * @Colors {primary, secondary}
+ * @Text {primary-text, secondary-text}
+ */
+$primary: $deepSkyBlue;
+$secondary: $brightTurquoise;
+$primary-text: $rhino;
+$secondary-text: $governorBay;
+
+/**
+ * THEME MAIN PALETTE
+ *
+ * @btn { primary }
+ */
+$btn-padding-y: 0.875rem;
+$btn-padding-x: 1.25rem;
+$btn-font-size: 0.875rem;
+
+/**
+ * THEME MAIN PALETTE
+ *
+ * @Input
+ */
+$input-bg: $midnightExpressShade3;
+$input-placeholder-color: $bayOfMany;
+$input-color: $lightSteelBlue;
+$input-box-shadow: none;
+$input-border-color: $input-bg;
+$input-focus-border-color: $governorBay;
+$input-padding-y: 0.5rem;
+$input-padding-x: 2rem;
+$input-font-size: 0.875rem;
+
+/**
+ * THEME MAIN PALETTE
+ *
+ * @Button
+ */
+$input-btn-focus-width: 0;
+$input-btn-focus-box-shadow: none;
+
+/**
+ * THEME MAIN PALETTE
+ *
+ * @Border Radius { 4 | 6 | 10 }
+ */
+$border-radius-4: 0.25rem;
+$border-radius-6: 0.375rem;
+$border-radius-10: 0.625rem;
+
+/**
+ * GRID SYSTEM
+ *
+ * @Breakpoints {0 | 1280 | 1360 | 1440 | 1620 }
+ */
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 1280px,
+        md: 1380px,
+        lg: 1440px,
+        xl: 1620px,
+);

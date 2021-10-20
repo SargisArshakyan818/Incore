@@ -1,0 +1,267 @@
+/**
+ * PLACEHOLDER
+ *
+ * Usage: @include placeholder { color: '#fff' };
+ */
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@function unfoldtransition($transition) {
+  // Default values
+  $property: all;
+  $duration: 0.3s;
+  $easing: ease-out; // Browser default is ease, which is what we want
+  $delay: 0.1s; // Browser default is 0, which is what we want
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i);
+    } @else {
+      $p: nth($defaultProperties, $i);
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+
+/**
+ * TRANSITIONS
+ * Pass in any number of transitions
+ *
+ * Usage:   @include transition(width, height 0.3s ease-in-out);
+ * Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+ *          transition(width 0.2s, height 0.3s ease-in-out);
+*/
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldtransition($transition), comma);
+  }
+
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
+}
+
+//  Font Size Mixin
+$fontSizes: (
+        10: 0.625rem,
+        12: 0.75rem,
+        14: 0.875rem,
+        16: 1rem,
+);
+
+@mixin gen-fonts-props($prefix, $property) {
+  @each $fontSize-name, $fontSize in $fontSizes {
+    .#{$prefix}-#{$fontSize-name} {
+      #{$property}: $fontSize;
+    }
+  }
+}
+// Text and Background Color Mixin
+$colors: (
+        primary: $primary-text !important,
+        secondary: $secondary-text !important,
+        light: $lightSteelBlue !important,
+        perano: $perano,
+        chetwodeBlue: $chetwodeBlue,
+        quartz: $quartz,
+        portGore: $portGore,
+        orange: $orange,
+        brightTurquoise: $brightTurquoise,
+        caribbeanGreen: $caribbeanGreen,
+        deepSkyBlue: $deepSkyBlue,
+        governorBay: $governorBay,
+        rhino: $rhino,
+        darkViolet: $darkViolet,
+        heliotrope: $heliotrope,
+        midnightExpressShade1: $midnightExpressShade1,
+        midnightExpressShade2: $midnightExpressShade2,
+        tangerineYellow: $tangerineYellow,
+        midnightExpressShade3: $midnightExpressShade3,
+        gorse: $gorse !important,
+        resolutionBlue: $resolutionBlue,
+        christalle: $christalle,
+        luckyPointShade1: $luckyPointShade1,
+        irisBlue: $irisBlue,
+        ghostWhite: $ghostWhite,
+        error: #ffeded,
+        electricPurple: $electricPurple,
+        battle: $battle,
+        textColor2: $textColor2,
+        inlineTextColor3: $inlineTextColor3,
+        inlineTextColor4: $inlineTextColor4,
+        bgColor3: $bgColor3,
+        bgColor5: $bgColor5,
+        bgColor2: $bgColor2,
+        inlineTextColor6: $inlineTextColor6,
+        inlineTextColor7: $inlineTextColor7,
+        bgColor8: $bgColor8,
+        inlineTextColor8: $inlineTextColor8,
+        bgColor1: $bgColor1,
+        textColor3: $textColor3,
+        textColor1: $textColor1,
+        inlineTextColor10: $inlineTextColor10,
+        inlineTextColor11: $inlineTextColor11,
+        inlineTextColor12: $inlineTextColor12,
+        borderColor3: $borderColor3,
+        bgColor13: $bgColor13,
+        bgColor15: $bgColor15,
+        bgColor9: $bgColor9,
+        bgColor16: $bgColor16,
+        inlineTextColor13: $inlineTextColor13,
+        inlineTextColor14: $inlineTextColor14,
+        inlineTextColor15: $inlineTextColor15,
+        inlineTextColor16: $inlineTextColor16,
+        inlineTextColor18: $inlineTextColor18,
+        bgColor25: $bgColor25,
+        bgColor19: $bgColor19,
+        inlineTextColor21: $inlineTextColor21,
+        inlineTextColor22: $inlineTextColor22,
+        inlineTextColor24: $inlineTextColor24,
+        inlineTextColor25: $inlineTextColor25,
+        inlineTextColor26: $inlineTextColor26,
+        bgColor37: $bgColor37,
+        inlineTextColor29: $inlineTextColor29,
+        borderColor7: $borderColor7,
+        inlineTextColor30: $inlineTextColor30,
+        inlineTextColor31: $inlineTextColor31,
+        borderColor2: $borderColor2,
+        inlineTextColor33: $inlineTextColor33,
+        inlineTextColor34: $inlineTextColor34,
+        bgColor11: $bgColor11,
+        bgColor43: $bgColor43,
+        bgColor44: $bgColor44,
+        borderColor8: $borderColor8,
+        hoverColor9: $hoverColor9,
+);
+
+@mixin gen-text-props($prefix, $property) {
+  @each $color-name, $color in $colors {
+    .#{$prefix}-#{$color-name} {
+      #{$property}: $color;
+    }
+  }
+}
+
+// Margin and Padding mixin
+$sizes: (
+        -5: 0.3125rem !important,
+        10: 0.625rem !important,
+        15: 0.9375rem !important,
+        20: 1.25rem !important,
+        25: 1.5625rem !important,
+        30: 1.875rem !important,
+        40: 2.5rem !important,
+        50: 3.125rem !important,
+        60: 3.75rem !important
+);
+
+$details: (
+        l: left,
+        r: right,
+        t: top,
+        b: bottom,
+);
+
+@mixin gen-properties-detail-props($prefix, $property) {
+  @each $size-name, $size in $sizes {
+    @each $detail-name, $detail in $details {
+      .#{$prefix + $detail-name}-#{$size-name} {
+        #{$property}-#{$detail}: $size;
+      }
+    }
+  }
+}
+@mixin gen-properties-props($prefix, $property) {
+  @each $size-name, $size in $sizes {
+    .#{$prefix}-#{$size-name} {
+      #{$property}: $size;
+    }
+  }
+}
+
+//Border Radius Mixin
+$radiuses: (
+        0: 0,
+        4: $border-radius-4,
+        6: $border-radius-6,
+        10: $border-radius-10,
+);
+
+$types: (-left-top: -top-left, -right-top: -top-right);
+
+@mixin gen-border-radius-detail-props($prefix, $property, $propertyItem) {
+  @each $radius-name, $radius in $radiuses {
+    @each $type-name, $type in $types {
+      .#{$prefix + $type-name}-#{$radius-name} {
+        #{$property+$type}-#{$propertyItem}: $radius;
+      }
+    }
+  }
+}
+@mixin gen-border-radius-props($prefix, $property, $propertyItem) {
+  @each $radius-name, $radius in $radiuses {
+    .#{$prefix}-#{$radius-name} {
+      #{$property}-#{$propertyItem}: $radius;
+    }
+  }
+}
+
+// Border Mixin
+$borders: (
+        bay: 1px solid $bayOfMany,
+        governorBay: 1px solid $governorBay,
+        rhino: 1px solid $rhino,
+        chetwodeBlue: 1px solid $chetwodeBlue,
+        borderColor7: 1px solid $borderColor7,
+        borderColor15: 1px solid $borderColor15,
+);
+$borderTypes: (
+        top: -top,
+        left: -left,
+        right: -right,
+        bottom: -bottom,
+);
+
+@mixin gen-border-detail-props($prefix) {
+  @each $border-name, $border in $borders {
+    @each $borderType-name, $borderType in $borderTypes {
+      .#{$prefix + $borderType}-#{$border-name} {
+        #{$prefix+$borderType}: $border;
+      }
+    }
+  }
+}
+@mixin gen-border-props($prefix) {
+  @each $border-name, $border in $borders {
+    .#{$prefix}-#{$border-name} {
+      #{$prefix}: $border;
+    }
+  }
+}

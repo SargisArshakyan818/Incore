@@ -1,0 +1,435 @@
+@import '../theme/variables';
+@import '../theme/mixins';
+
+html {
+  scrollbar-width: none;
+}
+
+/**
+ * BODY
+ */
+body {
+  overflow: auto;
+  -ms-overflow-style: none;
+  color: $quartz;
+  background-color: $bgColor23;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+
+  a {
+    @include transition(color);
+  }
+}
+
+/**
+ * HEADLINES
+ */
+h1,
+.h1 {
+  font-size: 2rem;
+}
+
+h2,
+.h2 {
+  font-size: 1.75rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.25rem;
+}
+
+h5,
+.h5 {
+  font-size: 1rem;
+}
+
+/**
+ * FONTS
+ *
+ * usage: font-weight-medium | -semi-bold ...
+ */
+.font-weight {
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semi-bold {
+    font-weight: 600;
+  }
+}
+
+/**
+ * FONTS
+ * Size
+ * usage: body-10 | -12 | -14 ...
+ */
+@include gen-fonts-props('body', 'font-size');
+
+/**
+ * TEXT
+ *
+ * usage: text-primary | -secondary | -light ...
+ */
+@include gen-text-props('text', 'color');
+/**
+ * BACKGROUND
+ *
+ * usage: bgColor-colorName
+ */
+@include gen-text-props('bgColor', 'background-color');
+
+/**
+ * MARGIN
+ *
+ * usage: ml-30, mr-30 ....
+ *
+ * @exception
+ * usage of 5 of margin: mr--5, m--5 ...
+ */
+@include gen-properties-detail-props('m', 'margin');
+@include gen-properties-props('m', 'margin');
+
+/**
+ * PADDING
+ *
+ * Usage: pl-30, pt-20
+ *
+ * @exception
+ * usage of 5 of padding: pr--5, p--5 ...
+ */
+@include gen-properties-detail-props('p', 'padding');
+@include gen-properties-props('p', 'padding');
+
+/**
+* BORDER
+* Radius
+* usage: border-radius-4 ...
+*/
+@include gen-border-radius-detail-props('border-radius', 'border', 'radius') @include
+gen-border-radius-props('border-radius', 'border', 'radius')
+/**
+* BORDER
+* usage: border-top-bay | -bottom-bay | ...
+*/ @include
+gen-border-detail-props('border') @include gen-border-props('border')
+/**
+* WIDTH
+*
+* usage: .w-80,
+*/ .w {
+      &-50 {
+        width: 50% !important;
+      }
+      &-80 {
+        width: 80% !important;
+      }
+    }
+
+/**
+ * MAX WIDTH
+ *
+ * usage: .mw-20, .mw-40 .mw-xl-20, mw-xl-40
+ */
+.mw {
+  &-20 {
+    max-width: 20%;
+    flex: 0 0 20%;
+  }
+
+  &-xl-20 {
+    @media (min-width: 1800px) {
+      max-width: 20%;
+      flex: 0 0 20%;
+    }
+  }
+
+  &-40 {
+    max-width: 40%;
+    flex: 0 0 40%;
+  }
+
+  &-xl-40 {
+    @media (min-width: 1800px) {
+      max-width: 40%;
+      flex: 0 0 40%;
+    }
+  }
+}
+
+/**
+ * CURSOR
+ *
+ * @cursor { pointer }
+ */
+.cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+}
+
+/**
+ * HR
+ *
+ * @hr { profile }
+ */
+.hr {
+  &-profile {
+    width: 100%;
+    height: 1px;
+    background-color: $borderColor8;
+    opacity: 0.1;
+    border: none;
+    &.light {
+      opacity: 0.5;
+    }
+  }
+}
+
+/**
+* SCROLLBAR
+*/
+.scrollbar-moz {
+  scrollbar-color: $scrollBg1 $scrollBg2;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $scrollBg2;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scrollBg1;
+  border-radius: 20px;
+}
+
+/**
+ * ANIMATION
+ */
+.animation {
+  /**
+  *  Fade out animation
+  */
+  &-fade-out {
+    animation: fade-out 4s ease-in-out 1;
+  }
+  /**
+  * Wiggle animation
+  */
+  &-wiggle {
+    animation: wiggle 0.25s;
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: translateY(0);
+      left: 0;
+    }
+    10% {
+      transform: translateY(-2px);
+      left: -2px;
+    }
+    20% {
+      transform: translateY(0);
+      left: -2px;
+    }
+    30% {
+      transform: translateY(-2px);
+      left: -1px;
+    }
+    40% {
+      transform: translateY(-2px);
+      left: 2px;
+    }
+    50% {
+      transform: translateY(-1px);
+      left: -2px;
+    }
+    60% {
+      transform: translateY(-2px);
+      left: -2px;
+    }
+    70% {
+      transform: translateY(0);
+      left: 2px;
+    }
+    80% {
+      transform: translateY(2px);
+      left: 0;
+    }
+    90% {
+      transform: translateY(2px);
+      left: -2px;
+    }
+    100% {
+      transform: translateY(0);
+      left: 0;
+    }
+  }
+  /**
+  * first place diamond background animation
+  */
+  &-shine {
+    &:before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      transition: 0.2s;
+      transform: scale(1);
+      background: radial-gradient(#ffde0069, #ffde0069 4%, #fff0 70%);
+      animation: pulsing infinite 1s;
+    }
+
+    @keyframes pulsing {
+      0% {
+        transform: scale(1.2);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /**
+    * Payment button load circle Animation
+    */
+  &-load-button {
+    width: 4px !important;
+    height: 4px !important;
+    background-color: white !important;
+    border-radius: 50%;
+    margin-right: 3px;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 5px;
+    }
+
+    &-single {
+      animation: single 0.6s linear infinite;
+    }
+
+    &-double {
+      animation: double 0.6s linear infinite;
+    }
+
+    @keyframes single {
+      0% {
+        transform: translateY(2px);
+      }
+      50% {
+        transform: translateY(-2px);
+      }
+      100% {
+        transform: translateY(2px);
+      }
+    }
+    @keyframes double {
+      0% {
+        transform: translateY(-2px);
+      }
+      50% {
+        transform: translateY(2px);
+      }
+      100% {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  //Glowing Animation for cards border
+  @keyframes glowingRare {
+    0% {
+      box-shadow: 0 0 3px #aee9ff;
+    }
+    50% {
+      box-shadow: 0 0 15px #aee9ff;
+    }
+    100% {
+      box-shadow: 0 0 3px #aee9ff;
+    }
+  }
+  @keyframes glowingEpic {
+    0% {
+      box-shadow: 0 0 3px #b375da;
+    }
+    50% {
+      box-shadow: 0 0 15px #b375da;
+    }
+    100% {
+      box-shadow: 0 0 3px #b375da;
+    }
+  }
+  @keyframes glowingUncommon {
+    0% {
+      box-shadow: 0 0 3px #12eeb1;
+    }
+    50% {
+      box-shadow: 0 0 15px #12eeb1;
+    }
+    100% {
+      box-shadow: 0 0 3px #12eeb1;
+    }
+  }
+  @keyframes glowingLegend {
+    0% {
+      box-shadow: 0 0 3px #8e7c3b;
+    }
+    50% {
+      box-shadow: 0 0 15px #8e7c3b;
+    }
+    100% {
+      box-shadow: 0 0 3px #8e7c3b;
+    }
+  }
+}
+.card {
+  border: none;
+  background-color: transparent;
+}
+.swiper-button {
+  &-prev,
+  &-next {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+/**
+ * RED LINE
+ */
+.strike {
+  position: relative;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #c3314b;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
