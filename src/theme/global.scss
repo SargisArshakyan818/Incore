@@ -1,6 +1,20 @@
 @import '../theme/variables';
 @import '../theme/mixins';
 
+.solution-section{
+  width: 1080px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0 auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scrollbar-width: none;
 }
@@ -13,7 +27,7 @@ body {
   -ms-overflow-style: none;
   color: $quartz;
   background-color: $bgColor23;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserratarm', sans-serif;
   font-size: 0.875rem;
 
   a {
